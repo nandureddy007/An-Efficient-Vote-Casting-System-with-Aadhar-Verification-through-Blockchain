@@ -1,0 +1,59 @@
+{% load static %}
+<html>
+<head>
+<title>Vote Casting System</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'default.css' %}" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+  <div id="header">
+    <div id="logo">
+      <h1><font color="orange" size="5">An Efficient Vote Casting System with Aadhar
+Verification through Blockchain</font></h1>
+	  <marquee><font color="pink" size="4">Vote Casting System</font></marquee>
+    </div>
+   
+  
+    </div>
+  </div>
+  <div id="menu">
+    <ul>
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'Admin' %}">Admin Login</a></li>
+      <li><a href="{% url 'User' %}">User Login</a></li>
+  </ul>
+  </div>
+  <div id="page">
+   <div id="content">
+      <div class="post">
+        <div class="title">
+          <h2>Vote Casting System</h2>
+         </div>
+        <div class="entry">
+		 <br/><br/><br/>
+<center><font size="" color="white">{{ data|safe }}</font></center>
+	 
+	 <br>
+          <p><img src="{% static 'images/images.jpg' %}" alt="" width="890" height="200" class="left" /><p></p><font size="4" color="white">
+          <center><br/>About Blockchain Voting</center></font></p>
+          <p><font size="" color="white">The technology
+behind blockchain and Aadhaar verification are used to simplify the process of
+the voting system. The Aadhaar number has to be fetched and verified with the
+database after entering every vote on the machine. The information has to be
+verified for the vote of an individual to be accepted by EVM and stored in
+block chain ledger.</p>
+
+
+          </div>
+        
+      </div>
+     
+       
+       
+    </div>
+    
+  </div>
+
+</body>
+</html>

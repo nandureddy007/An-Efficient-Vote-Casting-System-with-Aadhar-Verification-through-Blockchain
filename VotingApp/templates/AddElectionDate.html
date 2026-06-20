@@ -1,0 +1,62 @@
+{% load static %}
+<html>
+<head>
+<title>Vote Casting System</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'default.css' %}" rel="stylesheet" type="text/css" media="screen" />
+<script LANGUAGE="Javascript" >
+function validate(){
+	var x=document.forms["f1"]["t1"].value;
+	if(x == null || x==""){
+		window.alert("Election Date must be selected");
+		document.f1.t1.focus();
+		return false;
+	}	
+	return true;
+}
+</script>
+</head>
+<body>
+<div id="wrapper">
+  <div id="header">
+    <div id="logo">
+      <h1><font color="orange" size="5">An Efficient Vote Casting System with Aadhar
+Verification through Blockchain</font></h1>
+	  <marquee><font color="pink" size="4">Vote Casting System</font></marquee>
+    </div>
+    </div>
+  </div>
+  <div id="menu">
+   <ul>
+	<li><a href="{% url 'AddCandidate' %}">Candidate Registration</a></li> 
+	<li><a href="{% url 'AddVoter' %}">Voter Registration</a></li> 
+	<li><a href="{% url 'AddElectionDate' %}">Add Election Date</a></li> 
+	<li><a href="{% url 'ViewCount' %}">View Vote Count</a></li> 
+      <li><a href="{% url 'index' %}">Logout</a></li>      
+   </ul>
+  </div>
+  <div class="entry">
+   <br/><br/><br/>
+	<font size="" color="white"><center>{{ data|safe }}</center></font>
+	 <br>
+	 <center><font size="3" color="white">Add Election Date Screen</font></center>
+	<form name="f1" method="post" action={% url 'AddElectionDateAction' %}  nSubmit="return validate()">
+	{% csrf_token %}
+	<br><br>
+	<TABLE align="center" width="25%" class="notepad">
+	
+		 <tr><Td><font size="3" color="white"><b>Choose&nbsp;Election&nbsp;Date</td><td>
+<input name="t1" type="date" size="15" />
+</td></tr>	
+		
+			<tr><td></td><td><input type="submit" value="Submit">
+			</td>
+			</table>
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+		
+</form>
+</div>
+
+</body>
+</html>
